@@ -1,0 +1,53 @@
+﻿Group 4
+
+
+User Story #1: Log in
+As a user opening the application, they will have access to a login interface where they can enter their Spotify username and password. 
+
+
+If they have an account and it is validated, then it will be taken to their home/landing page, as described in the home/landing page user story. 
+
+
+If it is not validated or they do not have an account, then there will be an error message that lets the user know what the error is (account doesn’t exist or that the username/password is incorrect)
+ 
+**potential for a “guest account” functionality 
+
+
+User Story #2: Search Prompt
+As a user who successfully logs in, a prompt will appear for users to fill out their location and dates that they are interested in. 
+
+
+The user’s current location will automatically be shown along with a default radius to search, but users will have the option to change the location and increase/decrease radius of the circle. 
+
+
+Users will then enter in specified dates that they are searching for, but it must be for a search date that is that day or after the current date they are searching. Potential layout would be for a mini pop up calendar to be shown for date selection.
+
+
+If everything goes smoothly, the web application will store this information and remember it for the next time the user opens the application, as specified in the history user story. 
+
+
+If there is an error or the information is incomplete, there will be an error message to either correct the data and it will redirect the user to fill out the information again so that it can be successfully searched.
+
+
+Error dictionary = {past date: please enter date after current date, invalid location: please enter proper town/city}
+
+
+User Story #3: Home/Landing Page
+As a user who successfully enters the search prompt parameters, a list of concerts appear with basic info (i.e: date, venue, average price). On this list, there is an option to sort and/or filter based on different attributes like distance, date, genre, or average price.
+
+
+If there are no concerts in the area for the specified search parameters, the application will let the user know that there are no matches for the parameters and be brought back to the search prompt as specified in the search prompt user story.
+
+
+If there are search matches, then the list of concerts will appear, and the user can proceed to either change the search parameters again which will invoke the search prompt user story or the user can select a concert for more details, following the concert details user story.
+
+
+Potential UI Design:
+On the interface on the top left is the current search based on the information that was entered in the search parameters. Below on the left side will be filters for price, distance, etc.. that are in a tab format. On the interface on the right side is a list of previous prompt entries that the user can click on. There is also a button for a new search. This prompts the questions again.
+
+
+User Story #4: Selecting Concert from Home/Landing Page (Concert Details)
+As a user who selects a concert from the home/landing page, they are presented with more detail on the concert. Date, location, and a map showing the concert will be presented to the user, as well as a URL to purchase tickets. There is also a short bio and photo of the artist(s) performing at the concert. There is an option to expand the map showing the location of the venue. 
+
+
+If the concert has been cancelled or is no longer available, then the concert details page will not load and an error message will load that states if the concert was cancelled or modified. The user will then have the option to return back the the search result list.
