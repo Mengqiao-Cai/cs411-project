@@ -1,0 +1,16 @@
+Task,Estimated Hours
+Create a function that activates the pop-up window,1
+Integrate a Google Maps API to get location data,2
+Create a table for user's location searches,0.5
+Create a table for user's date searches,0.5
+Create a function that takes the location & date input to search for concerts that match the search criteria,1
+Design the layout of the calendar selection input,1.5
+Build a error message dictionary or table,1
+Validation system to ensure that date is valid,1
+Link together user table with location & date searches,0.5
+"Design the layout of the location input, the search button, etc",1
+Design the layout of the search prompt,1.5
+Validation system to ensure that location is valid,1
+Design the error messages (what it will say and how it will look),0.5
+Design the location radius search display,1
+Select a default radius search amount,0.5

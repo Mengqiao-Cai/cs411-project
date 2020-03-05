@@ -1,0 +1,10 @@
+Task,Estimated Hours
+design and build the page after logged in,5
+the request for the user location and dates pop out,5
+check the location through API,4
+"if right, store location in database",5
+check the date,2
+store date in the database,4
+error warning,4
+build a table of the user address and date,3
+show the information to user,3

@@ -1,0 +1,8 @@
+Task,Estimated Hours
+Design GUI for user prompt,0.5
+Storing user searches to database,3
+Fetch user's current location,1
+Display user location with default radius,2
+Implement custom date selecting,1
+Implement custom location functionality,1.5
+Design/implement error message,1
