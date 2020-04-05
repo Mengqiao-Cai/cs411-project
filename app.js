@@ -3,6 +3,7 @@ const express = require('express');
 // Instantiate the app here
 const app = express();
 
+//I have to somehow get this server to get requests from this url and not the array I made
 url = "https://app.ticketmaster.com/discovery/v2/events.json?size=1&apikey=bmaBdvvoasFwssS77Hqo2xUwqQJ"
 
 // Use static server to serve the Express Yourself Website
@@ -31,4 +32,3 @@ app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);
 });
 
-//I have to somehow get this server to get requests from this url and not the array I made
