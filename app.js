@@ -3,26 +3,24 @@ const express = require('express');
 // Instantiate the app here
 const app = express();
 
-//I have to somehow get this server to get requests from this url and not the array I made
-url = "https://app.ticketmaster.com/discovery/v2/events.json?size=1&apikey=bmaBdvvoasFwssS77Hqo2xUwqQJ"
-
 // Use static server to serve the Express Yourself Website
 app.use(express.static('public'));
 
-const events = [
-    {artist: 'JustinBeiber', date: '04/25/2020'},
-    {artist: 'TaylorSwift', date: '05/01/2020'}
-]
+var request = require('request');
+  var options = {
+  'method': 'GET',
+  'url': 'https://app.ticketmaster.com/discovery/v2/events.json?city=Boston&apikey=bmaBdvvoasFwssS77Hqo2xUwqQJAeFPh',
+  'headers': {
+    'Cookie': 'TMSO=seed=1daad088cf24&exp=1586629516&kid=key1&sig=0x4ce6c5d5ddef1485eca8c516309683d7597d067614bf7aa50210176cab6dc697a4f96ef0f9488028dd83429991ec6ac77e0fc70c49697590fedf25a8098384ba'
+  }
+};
 
-app.get('/events', (req, res, next) => {
-    // Here we would send back the events array in response
+app.get('/events', (req, res) => {
+  request(options, function (error, response) { 
+    if (error) throw new Error(error);
+    var events =  JSON.parse(response.body);
     res.send(events)
   });
-
-app.get('/events/:artist', (req, res) => {
-    const foundEvent = events.find(e => e.artist === (req.params.artist));
-    if (!foundEvent) res.status(404).send("the event with the given artist is not found");
-    res.send(foundEvent);
 });
 
 const PORT = process.env.PORT || 3000;
@@ -31,4 +29,3 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);
 });
-
