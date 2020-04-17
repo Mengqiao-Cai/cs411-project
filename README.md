@@ -1,4 +1,5 @@
 # cs411-project
-To run: type 
-1.'node app.js' in the terminal
-2. open up http://localhost:3000/events in a browser
+To run:
+1. navigate to project directory
+1. type in nodemon app.js in terminal
+2. navigate to www folder and open up index.html in a browser
