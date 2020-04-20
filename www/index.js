@@ -1,12 +1,13 @@
 $(window).on('load', function () {
-    $('#form').on('submit', function (e) {
+    $('#search').on('click', function (e) {
         e.preventDefault();
         const city = $('#city').val();
-
+        const date = $('#date').val();
+        
         console.log('Sending ajax');
         const options = {
             type: 'GET',
-            url: `http://localhost:3000/events?city=${city}`
+            url: `http://localhost:3000/events?city=${city}&date=${date}`
         };
         $.ajax(options).done(function (data) {
             document.getElementById('events').appendChild(makeUL(data));
