@@ -5,13 +5,26 @@ $(window).on('load', function () {
         const date = $('#date').val();
         
         console.log('Sending ajax');
-        const options = {
+        var options = {
             type: 'GET',
             url: `http://localhost:3000/events?city=${city}&date=${date}`
         };
         $.ajax(options).done(function (data) {
             document.getElementById('events').appendChild(makeUL(data));
         });
+
+        console.log("sending second ajax")
+        var options = {
+            type: 'GET',
+            url: `https://api.spotify.com/v1/me/top/{artists}`,
+            headers: {
+                'Authorization': 'Bearer BQAYi2yfTA31a9qM2OuMDVTOSjhUfu9GS4kb0B5JfoJbO6zsmcjbJwkqnlhisi0hXYE9iPtEDcS_AjB1s4vR9oBE8Bb58EdKYrt6HV_9in1506uWAApdGkAMPVObwPtlkTWD6se6KEMfGua4xY5vVOiUHhLKnN4'
+              }
+        };
+        $.ajax(options).done(function (data) {
+            console.log(data);
+        });
+
     });
 });
 

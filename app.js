@@ -143,6 +143,19 @@ app.get('/refresh_token', function(req, res) {
   });
 });
 
+app.get('/v1', (req, res) => {
+  var options = {
+    'method': 'GET',
+    'url': 'https://api.spotify.com/v1/me/top/{artists}',
+    'headers': {
+      'Authorization': 'Bearer BQAYi2yfTA31a9qM2OuMDVTOSjhUfu9GS4kb0B5JfoJbO6zsmcjbJwkqnlhisi0hXYE9iPtEDcS_AjB1s4vR9oBE8Bb58EdKYrt6HV_9in1506uWAApdGkAMPVObwPtlkTWD6se6KEMfGua4xY5vVOiUHhLKnN4'
+    }
+  };
+  request(options, function (error, response) { 
+    if (error) throw new Error(error);
+    console.log(response.body);
+  });
+});
 
 app.get('/events', (req, res) => {
   const city = req.query.city;
